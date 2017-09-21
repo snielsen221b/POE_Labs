@@ -1,7 +1,0 @@
-a = arduino('com9', 'uno', 'Libraries', 'Servo');
-
-% Create servo objects
-servo_1 = servo(a, 'D4');
-
-% Sweeps servo from 0 to 180 deg
-for 
