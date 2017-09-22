@@ -11,7 +11,7 @@ void loop() {
   sensorRead = analogRead(IR_SENSOR);
   Serial.print(sensorRead); 
   Serial.print(" ");
-  voltage = map_Voltage(sensorRead);
+  voltage = map_voltage(sensorRead);
   Serial.println(voltage);
 
 
