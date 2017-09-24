@@ -17,7 +17,7 @@ y_angle_ticks = 1/y_angle_step;
 % Create servo objects and servo position array
 x_servo = servo(arduino_board, 'D4');
 x_servo_positions = zeros(x_angle_ticks, 1);
-%y_servo = servo(arduino_Board, 'D5');
+x_servo = servo(arduino_Board, 'D5');
 
 % Define IR pin and IR data array
 IR_pin = 'A0';
