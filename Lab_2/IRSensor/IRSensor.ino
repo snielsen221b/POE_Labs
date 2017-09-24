@@ -13,6 +13,7 @@ void loop() {
   Serial.print(" ");
   voltage = map_voltage(sensorRead);
   Serial.println(voltage);
+  delay(1000);
 
 
 }
