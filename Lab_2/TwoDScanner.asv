@@ -42,11 +42,11 @@ for loop = 1:3
         % read voltage from IR_pin and store it
         IR_data(i, loop) = readVoltage(arduino_board, IR_pin)
 
-        pause(0.25);
+        pause(1);
     end
 end
 
-average_IR_data = zeros(length(x_servo_positions), 1);
+average_IR_data = zeros(x_servo_positions, 1);
 for i = 1:length(x_servo_positions)
     average_IR_data(i) = mean(IR_data(i,:))
 end
