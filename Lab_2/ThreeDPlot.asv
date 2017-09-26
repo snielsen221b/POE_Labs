@@ -1,3 +1,0 @@
-IR_3D = csvread('3D_IR.csv');
-x_angle = csvread('3D_xpos.csv');
-y_angle = csvread('3D_ypos.csv');

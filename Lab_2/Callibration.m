@@ -9,7 +9,7 @@ function [d, e] = Callibration()
     measured_distance = calibration_data(:,1);
     measured_raw_IR = calibration_data(:,2:end);
 
-    average_raw_IR = zeros(length(measured_distance),1)
+    average_raw_IR = zeros(length(measured_distance),1);
     for i=1:length(measured_distance)
         average_raw_IR(i) = mean(measured_raw_IR(i,:));
     end
@@ -32,8 +32,10 @@ function [d, e] = Callibration()
     error = predicted_distance - expected_distance;
     percent_error = (abs(error)./predicted_distance)*100;
     
-    e = mean(percent_error)
+    e = mean(percent_error);
     
+    % Plots average measured value for each distance 
+    % and calibration curve against expected from IR datasheet
     figure(1)
         clf
         scatter(measured_voltage,measured_distance);
@@ -46,6 +48,7 @@ function [d, e] = Callibration()
         title('IR Sensor Calibration Curve')
         legend('Measured', 'Calibration Curve', 'Expected');
     
+    % Plots percent error as a function of distance
     figure(2)
         clf
         plot(expected_distance, percent_error);

@@ -9,7 +9,7 @@ arduino_board = arduino('COM9', 'Uno', 'Libraries', 'Servo');
 
 % set up angle step and define number of 'ticks' per sweep of the servo
 % angle bounds are 0 and 1
-x_angle_step = .025;
+x_angle_step = .0125;
 x_angle_ticks = 1/x_angle_step
 y_angle_ticks = 1
 
@@ -22,17 +22,16 @@ y_servo = servo(arduino_board, 'D5');
 IR_pin = 'A0';
 IR_data = zeros(x_angle_ticks, y_angle_ticks);
 
+% Sets y_servo straight on
 writePosition(y_servo, .5);
 
 for loop = 1:3
-    % Sets y_servo straight on
-
     % Sweeps servo from 0 to 180 deg
     for x_angle = 0:x_angle_step:1
         writePosition(x_servo, x_angle);
         x_current_position = readPosition(x_servo);
         x_current_position = x_current_position*180;
-        i = int8(x_angle*(1/x_angle_step) + 1)
+        i = int8(x_angle*(1/x_angle_step) + 1);
 
         j = 1;
 
