@@ -10,8 +10,8 @@ arduino_board = arduino('COM9', 'Uno', 'Libraries', 'Servo');
 % set up angle step and define number of 'ticks' per sweep of the servo
 % angle bounds are 0 and 1
 x_angle_step = .0125;
-x_angle_ticks = 1/x_angle_step
-y_angle_ticks = 1
+x_angle_ticks = 1/x_angle_step;
+y_angle_ticks = 1;
 
 % Create servo objects and servo position array
 x_servo = servo(arduino_board, 'D4');
@@ -39,7 +39,7 @@ for loop = 1:3
         x_servo_positions(i) = x_current_position;
 
         % read voltage from IR_pin and store it
-        IR_data(i, loop) = readVoltage(arduino_board, IR_pin)
+        IR_data(i, loop) = readVoltage(arduino_board, IR_pin);
 
         pause(0.25);
     end
@@ -47,7 +47,7 @@ end
 
 average_IR_data = zeros(length(x_servo_positions), 1);
 for i = 1:length(x_servo_positions)
-    average_IR_data(i) = mean(IR_data(i,:))
+    average_IR_data(i) = mean(IR_data(i,:));
 end
 
 csvwrite('2D_IR.csv', average_IR_data);
