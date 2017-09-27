@@ -13,10 +13,11 @@ figure(3)
     clf
     hold on
     plot(xpos,ypos,'b--o')
-    plot(xline,ones(length(xline)).*65,'k')
+     plot(xline,ones(length(xline)).*65)
     plot(xpos(40),ypos(40),'r.','markers',35)
+
     ylim([20 80])
     xlabel('X Position')
     ylabel('Y Position')
-    legend('Raw Data','Wall Location','Location of "Z"','Location','Southeast')
-    title('Detecting Location of "Z" in 2D-Scan')
+    legend('Raw Data','','')
+    
