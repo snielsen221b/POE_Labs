@@ -21,17 +21,18 @@ zpos = ones(length(x_angle), 1);
 %     end
 % end
 
-for i = 1:length(x_angle)
-    for j = 1:length(y_angle)
-        r = distance(i,j);
-        phi = y_angle(j);
-        theta = x_angle(i);
-        ypos(i) = r.*cosd(phi).*sind(theta);
-        xpos(i) = r.*cosd(phi).*cosd(theta); 
-    end
-end
+% for i = 1:length(x_angle)
+%     for j = 1:length(y_angle)
+%         r = distance(i,j);
+%         phi = y_angle(j);
+%         theta = x_angle(i);
+%         zpos(i) = r.*sind(phi);
+%         ypos(i) = r.*cos(phi).*sind(theta);
+%         xpos(i) = r.*cosd(phi).*cosd(theta); 
+%     end
+% end
 
-zpos = distance.*sind(y_angle);
+
 
 figure(3);
     scatter3(xpos,ypos,zpos)
