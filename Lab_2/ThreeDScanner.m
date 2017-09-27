@@ -54,14 +54,19 @@ for loop = 1:3
             pause(0.25);
         end
         pause(0.25);
+        disp(x_angle);
+        
     end
+    pause(0.25);
+disp(loop)
 end
 
 for i = 1:length(x_servo_positions)
     for j = 1:length(y_servo_positions)
          IR_data(i, j) = mean(IR_data(i,j,:));
      end
- end
+end
+ 
 csvwrite('3D_IR.csv',IR_data);
 csvwrite('3D_xpos.csv',x_servo_positions);
 csvwrite('3D_ypos.csv',y_servo_positions);
